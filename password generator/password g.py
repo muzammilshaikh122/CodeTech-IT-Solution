@@ -1,25 +1,11 @@
-import secrets
-import string
 import random
+import string
 
-from _ast import Break
+def generate_password(length=12):
+    characters = string.ascii_letters + string.digits + string.punctuation
+    password = ''.join(random.choice(characters) for _ in range(length))
+    return password
 
-letters = string.ascii_letters
-
-digits = string.digits
-
-special_chars = string.punctuation
-
-selection_list = letters + digits + special_chars
-
-password_len = 10
-
-while True:
-    password = ''
-    for i in range(password_len):
-        password += ''.join(secrets.choice(selection_list))
-
-        if (any(char in special_chars for char in password) and sum(char in digits for char in password)>=2):
-            Break
-            print(password)
-            Break
+# Example usage:
+generated_password = generate_password()
+print("Generated Password:", generated_password)
