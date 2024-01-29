@@ -1,4 +1,6 @@
-answer_yes = ["Yes", "Y", "yes", "y"]
+from typing import List
+
+answer_yes: list[str] = ["Yes", "Y", "yes", "y"]
 answer_no = ["No", "N", "no", "n"]
 
 print("""
@@ -28,16 +30,14 @@ if ans1 in answer_yes:
 elif ans1 in answer_no:
     print("\nNow, he is trying to kill you. Will, you knock him down? (Yes / No)\n")
 
-    ans3 = input(">>")
+    ans3: str = input(">>")
 answer_yes
-    if ans3 in answer_yes:
-        print("\nCongrats! He was a thief & You helped the police to catch him with your bravery.")
+if ans3 in answer_yes:
+    print("\nCongrats! He was a thief & You helped the police to catch him with your bravery.")
 
-    elif ans3 in answer_no:
-        print("\nSorry! You are dead. He was a thief & He killed you. GAME OVER")
-
-    else:
-        print("\nYou typed the wrong input. GOODBYE!")
+elif ans3 in answer_no:
+    print("\nSorry! You are dead. He was a thief & He killed you. GAME OVER")
 
 else:
     print("\nYou typed the wrong input. GOODBYE!")
+
